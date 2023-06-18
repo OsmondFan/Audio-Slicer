@@ -4,18 +4,10 @@ import librosa
 import soundfile as sf
 
 # Define the folder paths
-'''put this program in one drectory above the folders you store the audios will be the best for checking files'''
-dataset_raw_path = ""
-dataset_clean_path = ""
+dataset_raw_path = ''
+dataset_clean_path = ''
 
 # Define the minimum and maximum duration of each audio slice in seconds
-'''
-If the audio is greater than [max_duration] seconds:
-(eg: x_split.wav = 11 seconds, and max_duration=10, min_duration=5)
-The program will slice that audio into 10 seconds(max), and since the other
-duration is 1 second < 5 second, the second split will be deleted
-'''
-
 min_duration = 2
 max_duration = 10
 
@@ -25,8 +17,8 @@ if not os.path.exists(dataset_clean_path):
 
 # Loop through the files in the raw folder
 for file in os.listdir(dataset_raw_path):
-    # Check if the file is a wav file
-    if file.endswith(".wav"):
+    # Check if the file is a wav or mp3 file
+    if file.endswith(".wav") or file.endswith(".mp3"):
         # Load the audio file
         audio, sr = librosa.load(os.path.join(dataset_raw_path, file))
         # Detect the silence intervals
