@@ -1,4 +1,4 @@
-# Audio Slicer for SO VITS SVC
+# Audio Slicer
 
 This program is used to slice audio files based on the silences of each audio file inside a folder called "dataset_raw" and save all the slices of audios of each of the audio in the original folder into a new folder called "dataset_clean".
 
